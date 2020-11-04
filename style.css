@@ -1,0 +1,36 @@
+#header{
+
+    background-color: grey;
+    text-align: center;
+    display: block;
+    padding: 15px;
+}
+
+#search-results{
+
+    background-color:silver;
+    width: 25%;
+    height: 1000px;
+    margin-top: 10;
+}
+
+#weather-display{
+    background-color: whitesmoke;
+    width: 75%;
+    height: 1000px;
+}
+
+#search-bar {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35px;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+#search-button{
+    border-radius: 10px;
+    background-color: #33adff;
+    color: whitesmoke;
+}
