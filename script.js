@@ -46,10 +46,10 @@ searchBar.value = "";
 renderCities();
 })
 
-newButton.addEventListener("click", function(){
-//CANT GET VALUE FROM SELECTED BUTTON
+newButton.addEventListener("click", function(event){
 
-var city = this.getAttribute('#list-cities');
+//returns clicked target value
+ var city = event.target.dataset.city
 
 console.log(city);
 
@@ -58,17 +58,17 @@ var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=
 
 
 
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   })
-//     .then(function(response) {
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+    .then(function(response) {
 
-//         var results = response;
-//         console.log(results);
+        var results = response;
+        console.log(results);
 
 
-//     });
+    });
 
 
 
