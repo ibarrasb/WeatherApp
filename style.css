@@ -34,3 +34,17 @@
     background-color: #33adff;
     color: whitesmoke;
 }
+
+#list-cities{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    
+}
+
+.btn-cities{
+    width: 300px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
