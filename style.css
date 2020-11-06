@@ -1,3 +1,6 @@
+body{
+    font-style: oblique;
+}
 #header{
 
     background-color: grey;
@@ -5,17 +8,20 @@
     display: block;
     padding: 15px;
 }
+.search-container{
+    display: inline-block;
+}
 
 #search-results{
-
+ 
     background-color:silver;
-    width: 25%;
+    width: 20%;
     height: 1000px;
     margin-top: 10;
 }
 
 #weather-display{
-    background-color: whitesmoke;
+    
     width: 75%;
     height: 1000px;
 }
@@ -26,17 +32,20 @@
     justify-content: center;
     margin-left: 35px;
     margin-top: 5%;
-    border-radius: 10px;
+
 }
 
 #search-button{
-    border-radius: 10px;
+    display: inline-block;
+   
     background-color: #33adff;
     color: whitesmoke;
+    margin-top: 12px;
+    height: 29px;
 }
 
 #list-cities{
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     margin-top: 5px;
@@ -44,7 +53,30 @@
 }
 
 .btn-cities{
-    width: 300px;
+    width: 200px;
     border-radius: 5px;
-    align-items: left;
+    
+    
+}
+
+#today-container{
+display: block;
+border-style: solid;
+margin-top: 20px;
+margin-left: 20px;
+height: 30%;
+width: 100%;
+}
+
+.day{
+    display: inline-block;
+    background-color: blue;
+    height: 200px;
+    width: 150px;
+    margin: 10px;
+}
+#forecast-container{
+    
+    
+    margin-left: 10px;
 }

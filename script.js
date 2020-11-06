@@ -9,9 +9,6 @@ var Namecities = [];
 //calls cities function
 renderCities();
 
-
-
-
 //Creates a new button element once user searches for the city
 function renderCities() {
      CitiesList.innerHTML = " ";
@@ -27,7 +24,6 @@ function renderCities() {
         CitiesList.appendChild(li);
     }
 }
-
 //Calls function once button is clicked
 searchBtn.addEventListener("click", function(event){
     event.preventDefault();
@@ -36,6 +32,7 @@ var results = searchBar.value.trim();
 
 //doesnt append anything if search bar is empty
 if(results === ""){
+    alert("Enter a city")
     return;
 }
 //pushes the city into the array
@@ -49,14 +46,11 @@ renderCities();
 newButton.addEventListener("click", function(event){
 
 //returns clicked target value
- var city = event.target.dataset.city
+var city = event.target.dataset.city
 
 console.log(city);
 
-
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=77cb75e1dce4e2e8df315c39afb955ef";
-
-
 
 $.ajax({
     url: queryURL,
@@ -64,24 +58,17 @@ $.ajax({
   })
     .then(function(response) {
 
+        //Returns AJAX reponse from selected city
         var results = response;
         console.log(results);
 
+        var Weathercity = document.querySelector("#city-name-located");
+        var cityTem= document.querySelector("#city-temp-inside");
+        var toF = ((response.main.temp - 273.15)* 1.8) + 32;
+        Weathercity.innerHTML = results.name;
+        console.log(toF)
 
+        cityTem.innerHTML = parseInt(toF) + "°f";
     });
-
-
-
 });
-
-
-
-    
-
-
-
-
-
-
-
 
