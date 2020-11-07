@@ -50,7 +50,7 @@ var city = event.target.dataset.city
 
 console.log(city);
 
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=77cb75e1dce4e2e8df315c39afb955ef";
+var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&units=imperial&cnt=5&appid=77cb75e1dce4e2e8df315c39afb955ef"
 
 $.ajax({
     url: queryURL,
@@ -63,12 +63,18 @@ $.ajax({
         console.log(results);
 
         var Weathercity = document.querySelector("#city-name-located");
-        var cityTem= document.querySelector("#city-temp-inside");
-        var toF = ((response.main.temp - 273.15)* 1.8) + 32;
-        Weathercity.innerHTML = results.name;
-        console.log(toF)
+        var forecastNow = document.querySelector("#forecast-now");
+        var cityTem= document.querySelector("#city-temp");
+        var cityHum = document.querySelector("#city-hum");
+        var cityWind = document.querySelector("#city-wind");
+        
+        Weathercity.innerHTML = results.city.name;
+        // console.log(response.list[0].dt_txt)
 
-        cityTem.innerHTML = parseInt(toF) + "°f";
+        cityTem.innerHTML = "Temperature(F): " + (response.list[0].main.temp) + "°";
+        cityHum.innerHTML = "Humidity: "+ response.list[0].main.humidity +"%";
+        cityWind.innerHTML ="Wind Speed: " +response.list[0].wind.speed +"MPH";
+        forecastNow.innerHTML = response.list[0].weather[0].description;
     });
 });
 

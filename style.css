@@ -10,6 +10,12 @@ body{
 }
 .search-container{
     display: inline-block;
+    margin-left: 15px;
+}
+#temperature-block{
+
+    padding-left: 10px;
+
 }
 
 #search-results{
@@ -38,7 +44,7 @@ body{
 
 #search-button{
     display: inline;
-    width: 30%;
+    width: 25%;
     background-color: #33adff;
     color: whitesmoke;
     margin-top: 12px;
