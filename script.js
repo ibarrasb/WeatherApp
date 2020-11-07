@@ -6,8 +6,7 @@ var newButton = document.querySelector("#cities");
 //Creates Array for all cities that are inputted
 var Namecities = [];
 
-//calls cities function
-renderCities();
+init();
 
 //Creates a new button element once user searches for the city
 function renderCities() {
@@ -24,6 +23,21 @@ function renderCities() {
         CitiesList.appendChild(li);
     }
 }
+
+function init(){
+    var storedCities = JSON.parse(localStorage.getItem("Namecities"));
+
+  // If todos were retrieved from localStorage, update the todos array to it
+  if (storedCities !== null) {
+    Namecities = storedCities;
+  }
+
+  // Render todos to the DOM
+  renderCities();
+}
+function storeCities(){
+    localStorage.setItem("Namecities", JSON.stringify(Namecities));
+}
 //Calls function once button is clicked
 searchBtn.addEventListener("click", function(event){
     event.preventDefault();
@@ -39,7 +53,7 @@ if(results === ""){
 Namecities.push(results);
 //clears search bar for new input
 searchBar.value = "";
-
+storeCities();
 renderCities();
 })
 
