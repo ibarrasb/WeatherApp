@@ -75,15 +75,18 @@ height: 30%;
 width: 100%;
 }
 
-.day{
+#day{
     display: inline-block;
-    background-color: blue;
+    background-color:gray;
+    border-style: solid;
     height: 200px;
     width: 150px;
-    margin: 10px;
+    margin: 15px;
+    justify-content: center;
+    padding: 5px;
 }
 #forecast-container{
-    
-    
+    justify-content: center;
     margin-left: 10px;
+    padding: 10px;
 }
